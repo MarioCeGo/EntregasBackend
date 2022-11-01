@@ -1,0 +1,1 @@
+[{"name":"Ana","pin":5678,"isAdmin":true,"id":1},{"name":"Martin","pin":1234,"isAdmin":true,"id":2},{"name":"Juan","pin":1234,"isAdmin":false,"id":3}]

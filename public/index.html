@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <title>eCommerce</title>
+</head>
+<body>
+    <h1>Primera entrega</h1>
+    <h3>Registrar producto (Solo Admin)</h3>
+    <form id="form-product-set">
+        <input type="text" name="name" id="" placeholder="Nombre del producto">
+        <input type="text" name="description" id="" placeholder="Descripcion del producto">
+        <input type="number" name="price" id="" placeholder="Precio del producto">
+        <input type="number" name="code" id="" placeholder="Codigo del producto">
+        <input type="number" name="stock" id="" placeholder="Stock del producto">
+        <input type="text" name="thumbnail" id="" placeholder="URL imagen del producto">
+        <button type="submit">Registrar</button>
+    </form>
+    <h3>Editar producto (Solo Admin)</h3>
+    <form id="form-product-edit">
+        <input type="text" name="name" id="" placeholder="Nombre del producto">
+        <input type="text" name="description" id="" placeholder="Descripcion del producto">
+        <input type="number" name="price" id="" placeholder="Precio del producto">
+        <input type="number" name="code" id="" placeholder="Codigo del producto">
+        <input type="number" name="stock" id="" placeholder="Stock del producto">
+        <input type="text" name="thumbnail" id="" placeholder="URL imagen del producto">
+        <button type="submit">Editar</button>
+    </form>
+    <h3>Eliminar producto (Solo Admin)</h3>
+    <form id="form-product-delete">
+        <input type="number" name="stock" id="" placeholder="Stock del producto">
+
+        <button type="submit">Editar</button>
+    </form>
+
+    <div id="table-products"></div>
+
+    <script src="/public/src/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<h3>Productos registrados</h3>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Foto</th>
+    </tr>
+    {{#if data.length}}
+    {{#each data}}
+    <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+        <td><img src={{this.thumbnail}} alt="" height="50px" width="50px"></td>
+    </tr>
+    {{/each}}
+    {{else}}
+    <p>No hay productos</p>
+    {{/if}}
+</table>
