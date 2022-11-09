@@ -14,7 +14,7 @@ routerProduct.get('/:id', async (req, res) => {
 });
 routerProduct.post('/', adminCheck, async (req, res) => {
     const { name, description, code, thumbnail, price, stock } = req.body;
-    const date = new Date().toLocaleString();
+    const date = new Date();
     const msg = await sistem.setProduct({ name, description, code, thumbnail, price, stock, date });
     res.send(msg);
 });

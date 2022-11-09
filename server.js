@@ -6,6 +6,7 @@ import routerCart from "./routers/router.cart.js";
 import routerProduct from "./routers/router.product.js";
 import routerUser from "./routers/router.user.js";
 
+
 const PORT = process.env.PORT || 8080 ;
 const app = express();
 const { Router } = express();
@@ -29,9 +30,4 @@ httpServer.listen(8080);
 // })
 
 
-const getProducts = () => {
 
-}
-const getCart = () => {  
-    
-}

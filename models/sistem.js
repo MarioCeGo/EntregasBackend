@@ -1,4 +1,6 @@
 import fs from 'fs';
+import myKnex from '../servers/MariaDB.js';
+import myKnexSQL from '../servers/SQLite3.js';
 
 class Sistem {
     constructor() {
@@ -14,10 +16,46 @@ class Sistem {
                 data.length === 0 ? prod.id = 1 : prod.id = data[data.length - 1].id + 1;
                 data.push(prod);
                 await fs.promises.writeFile(this.products, JSON.stringify(data));
+                myKnex.from('products').insert({
+                    name: prod.name,
+                    description: prod.description,
+                    code: prod.code,
+                    thumbnail: prod.thumbnail,
+                    price: prod.price,
+                    stock: prod.stock,
+                    date: prod.date
+                }).then(a => console.log(a)).catch(e => console.log(e));
+                myKnexSQL.from('products').insert({
+                    name: prod.name,
+                    description: prod.description,
+                    code: prod.code,
+                    thumbnail: prod.thumbnail,
+                    price: prod.price,
+                    stock: prod.stock,
+                    date: prod.date
+                }).then(a => console.log(a)).catch(e => console.log(e));
                 return {saved: true};
             } catch (error) {
                 prod.id = 1
                 await fs.promises.writeFile(this.products, JSON.stringify([prod]));
+                myKnex.from('products').insert({
+                    name: prod.name,
+                    description: prod.description,
+                    code: prod.code,
+                    thumbnail: prod.thumbnail,
+                    price: prod.price,
+                    stock: prod.stock,
+                    date: prod.date
+                }).then(a => console.log(a)).catch(e => console.log(e));
+                myKnexSQL.from('products').insert({
+                    name: prod.name,
+                    description: prod.description,
+                    code: prod.code,
+                    thumbnail: prod.thumbnail,
+                    price: prod.price,
+                    stock: prod.stock,
+                    date: prod.date
+                }).then(a => console.log(a)).catch(e => console.log(e));
                 return {saved: true};
             }
         } catch (error) {
